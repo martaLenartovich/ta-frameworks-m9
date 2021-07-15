@@ -1,5 +1,5 @@
 import { browser, Key, protractor } from "protractor";
-import {} from "jasmine";
+import { } from "jasmine";
 import { HomePage } from "../utils/page_objects/home_page/home_page";
 import { CareersPage } from "../utils/page_objects/careers_page/careers_page";
 import { logger } from "../config/logger.config";
@@ -28,8 +28,8 @@ describe("search job test", () => {
     logger.info(
       '3. Select "Software Test Engineering" skill in Skills dropdown'
     );
-    await CareersPage.skillsDropdownField.click(); 
-    await browser.wait(EC.elementToBeClickable(CareersPage.skillsDropdown), 5000); 
+    await CareersPage.skillsDropdownField.click();
+    await browser.wait(EC.elementToBeClickable(CareersPage.skillsDropdown), 5000);
     await browser.sleep(3000);
     await CareersPage.softwareTestEngineeringCheckbox.click();
     const labelSelectedText = await CareersPage.labelSelected.getText();
@@ -37,8 +37,13 @@ describe("search job test", () => {
     expect(labelSelectedText + counterText).toEqual("Selected:1");
     logger.info('4. Click "Find" button');
     expect(await CareersPage.findButton.isEnabled()).toEqual(true);
-    await CareersPage.findButton.click(); 
+    await CareersPage.findButton.click();
     expect(CareersPage.resultLine).toBeDefined();
-    logger.error("This is error log!");
-    });
+    try {
+      await CareersPage.unexistingElement.click();
+    }
+    catch (NoSuchElementException) {
+      logger.error("No element found");
+    }
+  });
 });

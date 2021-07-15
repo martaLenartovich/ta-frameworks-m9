@@ -46,7 +46,7 @@ jasmine.DEFAULT_TIMEOUT_INTERVAL = 100 * 1000;
 describe("search job test", function () {
     it("should search Software Testing Engineer position in All Cities in Belarus", function () {
         return __awaiter(this, void 0, void 0, function () {
-            var _a, _b, _c, EC, labelSelectedText, counterText, _d;
+            var _a, _b, _c, EC, labelSelectedText, counterText, _d, NoSuchElementException_1;
             return __generator(this, function (_e) {
                 switch (_e.label) {
                     case 0:
@@ -114,7 +114,18 @@ describe("search job test", function () {
                         _e.sent();
                         expect(careers_page_1.CareersPage.resultLine).toBeDefined();
                         logger_config_1.logger.error("This is error log!");
-                        return [2 /*return*/];
+                        _e.label = 18;
+                    case 18:
+                        _e.trys.push([18, 20, , 21]);
+                        return [4 /*yield*/, careers_page_1.CareersPage.unexistingElement.click()];
+                    case 19:
+                        _e.sent();
+                        return [3 /*break*/, 21];
+                    case 20:
+                        NoSuchElementException_1 = _e.sent();
+                        logger_config_1.logger.error("no element found");
+                        return [3 /*break*/, 21];
+                    case 21: return [2 /*return*/];
                 }
             });
         });

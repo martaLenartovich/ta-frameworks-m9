@@ -28,6 +28,7 @@ export class CareersPage extends BasePage {
   static openToRelocationCheckbox = element(By.xpath('//label[@for="id-ce1e74aa-e69b-3bd2-9f9f-41628029ec68-relocation"]'));
   static officeCheckbox = element(By.xpath('//label[@for="id-ce1e74aa-e69b-3bd2-9f9f-41628029ec68-office"]'));
   static remoteCheckbox = element(By.xpath('//label[@for="id-ce1e74aa-e69b-3bd2-9f9f-41628029ec68-remote"]'));
+  static unexistingElement = element(By.className("unexistent"));
 
 
   url: string;
