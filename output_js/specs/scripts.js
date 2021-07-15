@@ -37,8 +37,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 var protractor_1 = require("protractor");
-var home_page_1 = require("../utils/pages/home_page/home_page");
-var careers_page_1 = require("../utils/pages/careers_page/careers_page");
+var home_page_1 = require("../utils/page_objects/home_page/home_page");
+var careers_page_1 = require("../utils/page_objects/careers_page/careers_page");
 var logger_config_1 = require("../config/logger.config");
 var careersPage = new careers_page_1.CareersPage();
 var homePage = new home_page_1.HomePage();

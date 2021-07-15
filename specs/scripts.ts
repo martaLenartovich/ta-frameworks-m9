@@ -1,7 +1,7 @@
 import { browser, Key, protractor } from "protractor";
 import {} from "jasmine";
-import { HomePage } from "../utils/pages/home_page/home_page";
-import { CareersPage } from "../utils/pages/careers_page/careers_page";
+import { HomePage } from "../utils/page_objects/home_page/home_page";
+import { CareersPage } from "../utils/page_objects/careers_page/careers_page";
 import { logger } from "../config/logger.config";
 const careersPage = new CareersPage();
 const homePage = new HomePage();

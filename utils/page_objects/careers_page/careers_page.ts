@@ -1,7 +1,7 @@
 import { browser, By, element } from "protractor";
 import { BasePage } from "../base_page/base_page";
 
-export class CareersPage extends BasePage{
+export class CareersPage extends BasePage {
   static careersButton = element(By.xpath('//a[@href="/careers"]'));
   static jobSearchFilterForm = element(By.id("jobSearchFilterForm"));
   static keyword = element(By.css('input[placeholder="Keyword"]'));
@@ -25,7 +25,11 @@ export class CareersPage extends BasePage{
   static resultLine = element(
     By.xpath('//h1[@class="search-result__heading"]')
   );
-  
+  static openToRelocationCheckbox = element(By.xpath('//label[@for="id-ce1e74aa-e69b-3bd2-9f9f-41628029ec68-relocation"]'));
+  static officeCheckbox = element(By.xpath('//label[@for="id-ce1e74aa-e69b-3bd2-9f9f-41628029ec68-office"]'));
+  static remoteCheckbox = element(By.xpath('//label[@for="id-ce1e74aa-e69b-3bd2-9f9f-41628029ec68-remote"]'));
+
+
   url: string;
   constructor() {
     super();
@@ -34,7 +38,7 @@ export class CareersPage extends BasePage{
   open() {
     return super.open(this.url);
   }
-  scrollToJobSearchFilterForm (){
+  scrollToJobSearchFilterForm() {
     browser.executeScript(
       "arguments[0].scrollIntoView();",
       CareersPage.jobSearchFilterForm.getWebElement()
